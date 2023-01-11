@@ -76,5 +76,16 @@ Cách 2: Sử dụng công cụ CSDL: xampp, wampp, Navicat, ...
   - `DESCRIBE tablename;`
     - vd:    `DESCRIBE users;`: show ra cấu trúc bảng users
 
+    - Kết quả:
+      MariaDB [php_online_module3]> DESCRIBE users;
+      +-----------+--------------+------+-----+---------+-------+
+      | Field     | Type         | Null | Key | Default | Extra |
+      +-----------+--------------+------+-----+---------+-------+
+      | id        | int(5)       | YES  |     | NULL    |       |
+      | email     | varchar(100) | YES  |     | NULL    |       |
+      | fullname  | varchar(50)  | YES  |     | NULL    |       |
+      | create_at | datetime     | YES  |     | NULL    |       |
+      +-----------+--------------+------+-----+---------+-------+
+
 - Kiểu dữ liệu hay dùng trong SQL
   - char(size): chuỗi có độ dài cố định, mặc định size là 1
