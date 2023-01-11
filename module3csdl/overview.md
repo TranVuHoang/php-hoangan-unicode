@@ -35,6 +35,17 @@
 
 - Trong folder xampp -> mysql -> bin -> mysql.exe và kéo vào trong cmd
   - `D:\xampp\mysql\bin\mysql.exe -u root -p` -> đăng nhập vào MariaDB và mysql
+    <pre>
+      C:\Users\DELL>D:\xampp\mysql\bin\mysql.exe -u root -p
+      Enter password:
+      Welcome to the MariaDB monitor.  Commands end with ; or \g.
+      Your MariaDB connection id is 26
+      Server version: 10.4.11-MariaDB mariadb.org binary distribution
+
+      Copyright (c) 2000, 2018, Oracle, MariaDB Corporation Ab and others.
+
+      Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+    </pre>
   - thoát khỏi MariaDB: `exit;`
 - Đặc điểm của xampp:
   - user: root
@@ -58,6 +69,7 @@ Cách 2: Sử dụng công cụ CSDL: xampp, wampp, Navicat, ...
 - Hiển thị databasse trên màn hình CMD:
   - `SHOW DATABASES;`
   - Kết quả:
+  <pre>
     MariaDB [(none)]> SHow databases;
     +--------------------+
     | Database           |
@@ -102,6 +114,7 @@ Cách 2: Sử dụng công cụ CSDL: xampp, wampp, Navicat, ...
     | unitop_backup      |
     +--------------------+
     38 rows in set (0.002 sec)
+  </pre>
 
 - Xóa cơ sở dữ liệu:
   - `DROP DATABASE databasename;`
@@ -143,4 +156,155 @@ Cách 2: Sử dụng công cụ CSDL: xampp, wampp, Navicat, ...
   - tinyint: Số nguyên có giá trị từ -128 đến 127
   - smallint: Số nguyên có giá trị từ: -32768 đến 32767
   - mediumint: Số nguyên có giá trị từ: -8388608 đến 8388607
-  
+
+  - int: Số nguyên có giá trị từ: -214783648 đến 214783647
+  - bigint: Số nguyên có giá trị từ: ...
+  - float: Số thực có giá trị từ: ...
+  - double:
+  - datetime: Kiểu ngày giờ: YYYY-MM-DD H:i:s
+  - date: Kiểu ngày: YYYY-MM-DD
+  - Timestamp: kiểu ngày giờ và lưu ở dạng giờ quốc tế UTC (YYYY-MM-DD H:i:s UTC)
+    - khi truy xuất sẽ tự động đổi sang múi giờ UTC
+
+# 57: Kiến Thức Với SQL - Tạo Bảng (Phần 2) 
+- Xóa bảng:
+  - `DROP table table_name;`
+- Sửa bảng:
+  - Thêm cột:
+    - ``ALTER TABLE `table_name` ADD `column_name` datatype;``
+  - Xóa cột:
+    - ``ALTER TABLE `table_name` DROP `column_name`;``
+  - Sửa cột:
+    - ``ALTER TABLE `table_name` MODIFY COLUMN `column_name` datatype;``
+
+- Ví dụ:
+  - Xóa bảng:
+    - `DROP table table_name;`
+    - vd: 
+      - `DROP table users;`
+      - kq: `Query OK, 0 rows affected (0.364 sec)`;
+
+  - Thêm cột `password` vào bảng `users`:
+    - `` ALTER TABLE `users` ADD `password` varchar(50);``
+    - kq:
+      <pre>
+        Query OK, 0 rows affected (0.169 sec)
+        Records: 0  Duplicates: 0  Warnings: 0
+      </pre>
+
+  - Show cấu trúc bảng `users` sau khi thêm cột `password`:
+    - `DESCRIBE users;`
+    - kq:
+      <pre>
+        MariaDB [php_online_module3]> DESCRIBE users;
+        +-----------+--------------+------+-----+---------+-------+
+        | Field     | Type         | Null | Key | Default | Extra |
+        +-----------+--------------+------+-----+---------+-------+
+        | id        | int(5)       | YES  |     | NULL    |       |
+        | email     | varchar(100) | YES  |     | NULL    |       |
+        | fullname  | varchar(50)  | YES  |     | NULL    |       |
+        | create_at | datetime     | YES  |     | NULL    |       |
+        | password  | varchar(50)  | YES  |     | NULL    |       |
+        +-----------+--------------+------+-----+---------+-------+
+        5 rows in set (0.049 sec)
+      </pre>
+  - Xóa cột `password` khỏi bảng `users`:
+    - ``ALTER TABLE `users` DROP COLUMN `password`; ``
+    - KQ:
+      <pre>
+        Query OK, 0 rows affected (0.421 sec)
+        Records: 0  Duplicates: 0  Warnings: 0
+      </pre>
+  - Show cấu trúc bảng `users` sau khi xóa cột `password`:
+    - `DESCRIBE users;`
+    - kq:
+      <pre>
+        MariaDB [php_online_module3]> DESCRIBE users;
+        +-----------+--------------+------+-----+---------+-------+
+        | Field     | Type         | Null | Key | Default | Extra |
+        +-----------+--------------+------+-----+---------+-------+
+        | id        | int(5)       | YES  |     | NULL    |       |
+        | email     | varchar(100) | YES  |     | NULL    |       |
+        | fullname  | varchar(50)  | YES  |     | NULL    |       |
+        | create_at | datetime     | YES  |     | NULL    |       |
+        +-----------+--------------+------+-----+---------+-------+
+        4 rows in set (0.013 sec)
+      </pre>
+  - Sửa kiểu của cột `fullname` trong bảng `users`:
+    - ``MariaDB [php_online_module3]> ALTER TABLE `users` MODIFY COLUMN `fullname` text;``
+      <pre>
+        Query OK, 0 rows affected (1.717 sec)
+        Records: 0  Duplicates: 0  Warnings: 0
+      </pre>
+    - `DESCRIBE users;`
+      <pre>
+        +-----------+--------------+------+-----+---------+-------+
+        | Field     | Type         | Null | Key | Default | Extra |
+        +-----------+--------------+------+-----+---------+-------+
+        | id        | int(5)       | YES  |     | NULL    |       |
+        | email     | varchar(100) | YES  |     | NULL    |       |
+        | fullname  | text         | YES  |     | NULL    |       |
+        | create_at | datetime     | YES  |     | NULL    |       |
+        +-----------+--------------+------+-----+---------+-------+
+        4 rows in set (0.029 sec)
+      </pre>
+
+# 58: Kiến Thức Với SQL - Thêm Sửa Xóa Dữ Liệu
+- Thêm dữ liệu:
+  - ``
+      INSERT INTO `table_name` (`column1_name`, `column2_name`, `column3_name`, ...) 
+      VALUES (value1, value2, value3, ...);
+    ``
+
+- Sửa dữ liệu:
+  - `` 
+      UPDATE `table_name` 
+      SET `column_name1` = value1,`column_name2` = value2, `column_name3` = value3, ...  
+      WHERE conditon;
+    ``
+
+- Xóa dữ liệu:
+  - ``
+    DELETE FROM `table_name`
+    WHERE condition;
+    ``
+- Ví dụ:
+  - Thêm dữ liệu:
+    `` 
+    INSERT INTO `users` (`id`, `email`, `fullname`, `create_at`, `update_at`) 
+    VALUES ('2', 'admin@admin.com', 'Admin', '2023-01-11 13:54:09', '2023-01-12 14:20:03');
+    ``
+  - kq:
+    ``
+    MariaDB [php_online_module3]> INSERT INTO `users` (`id`, `email`, `fullname`, `create_at`, `update_at`)
+    -> VALUES ('2', 'admin@admin.com', 'Admin', '2023-01-11 13:54:09', '2023-01-12 14:20:03');
+    Query OK, 1 row affected (0.144 sec)
+    ``
+    <pre>
+    MariaDB [php_online_module3]> SELECT * FROM `users`;
+    +------+-------------------------+------------+---------------------+---------------------+
+    | id   | email                   | fullname   | create_at           | update_at           |
+    +------+-------------------------+------------+---------------------+---------------------+
+    |    1 | tranvuhoangjr@gmail.com | Hoang Tran | 2023-01-11 13:54:03 | 2023-01-12 13:54:03 |
+    |    2 | admin@admin.com         | Admin      | 2023-01-11 13:54:09 | 2023-01-12 14:20:03 |
+    +------+-------------------------+------------+---------------------+---------------------+
+    2 rows in set (0.000 sec)
+    </pre>
+    ``
+    MariaDB [php_online_module3]> INSERT INTO `users` (`id`, `email`, `fullname`, `create_at`)
+    -> VALUES (3, "user3@gmail.com", "User3", NOW());
+    Query OK, 1 row affected (0.198 sec)
+    ``
+    ``
+    MariaDB [php_online_module3]> SELECT * FROM `users`;
+    +------+-------------------------+------------+---------------------+---------------------+
+    | id   | email                   | fullname   | create_at           | update_at           |
+    +------+-------------------------+------------+---------------------+---------------------+
+    |    1 | tranvuhoangjr@gmail.com | Hoang Tran | 2023-01-11 13:54:03 | 2023-01-12 13:54:03 |
+    |    2 | admin@admin.com         | Admin      | 2023-01-11 13:54:09 | 2023-01-12 14:20:03 |
+    |    3 | user3@gmail.com         | User3      | 2023-01-11 14:25:55 | NULL                |
+    +------+-------------------------+------------+---------------------+---------------------+
+    3 rows in set (0.000 sec)
+    ``
+  - Sửa dữ liệu:
+    ``
