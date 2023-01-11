@@ -51,7 +51,7 @@
   - user: root
   - password: '' (để trống-rỗng)
 
-# 55. Kiến thức SQL - Thao tác với database
+## 55. Kiến thức SQL - Thao tác với database
 - KIẾN THỨC CSDL MYSQL
 - Môi trường học tập
 Cách 1: Sử dụng CMD có sẵn trên máy, hoặc qua các phần mềm terminal tích hợp sẵn trong IDE(vsCode, phpStorm,...)
@@ -126,7 +126,7 @@ Cách 2: Sử dụng công cụ CSDL: xampp, wampp, Navicat, ...
   - `SHOW tables;` : Show ra tất cả các bảng có trong cơ sở dữ liệu   
   - trước khi xem các bảng trong csdl cần phải sử dụng csdl đó mới xem đc bảng
 
-# 56: Kiến Thức Với SQL - Tạo Bảng (Phần 1)
+## 56: Kiến Thức Với SQL - Tạo Bảng (Phần 1)
 - Tạo bảng `users` trong csdl `php_online_module3`
   - `CREATE TABLE users (id int(5), email varchar(100), fullname varchar(50), create_at datetime);`
 
@@ -166,7 +166,7 @@ Cách 2: Sử dụng công cụ CSDL: xampp, wampp, Navicat, ...
   - Timestamp: kiểu ngày giờ và lưu ở dạng giờ quốc tế UTC (YYYY-MM-DD H:i:s UTC)
     - khi truy xuất sẽ tự động đổi sang múi giờ UTC
 
-# 57: Kiến Thức Với SQL - Tạo Bảng (Phần 2) 
+## 57: Kiến Thức Với SQL - Tạo Bảng (Phần 2) 
 - Xóa bảng:
   - `DROP table table_name;`
 - Sửa bảng:
@@ -249,7 +249,7 @@ Cách 2: Sử dụng công cụ CSDL: xampp, wampp, Navicat, ...
         4 rows in set (0.029 sec)
       </pre>
 
-# 58: Kiến Thức Với SQL - Thêm Sửa Xóa Dữ Liệu
+## 58. Kiến Thức Với SQL - Thêm Sửa Xóa Dữ Liệu
 - Thêm dữ liệu:
   - ``
       INSERT INTO `table_name` (`column1_name`, `column2_name`, `column3_name`, ...) 
@@ -270,16 +270,16 @@ Cách 2: Sử dụng công cụ CSDL: xampp, wampp, Navicat, ...
     ``
 - Ví dụ:
   - Thêm dữ liệu:
-    `` 
+    <pre>
     INSERT INTO `users` (`id`, `email`, `fullname`, `create_at`, `update_at`) 
     VALUES ('2', 'admin@admin.com', 'Admin', '2023-01-11 13:54:09', '2023-01-12 14:20:03');
-    ``
+    </pre>
   - kq:
-    ``
+    <pre>
     MariaDB [php_online_module3]> INSERT INTO `users` (`id`, `email`, `fullname`, `create_at`, `update_at`)
     -> VALUES ('2', 'admin@admin.com', 'Admin', '2023-01-11 13:54:09', '2023-01-12 14:20:03');
     Query OK, 1 row affected (0.144 sec)
-    ``
+    </pre>s
     <pre>
     MariaDB [php_online_module3]> SELECT * FROM `users`;
     +------+-------------------------+------------+---------------------+---------------------+
@@ -290,12 +290,12 @@ Cách 2: Sử dụng công cụ CSDL: xampp, wampp, Navicat, ...
     +------+-------------------------+------------+---------------------+---------------------+
     2 rows in set (0.000 sec)
     </pre>
-    ``
+    <pre>
     MariaDB [php_online_module3]> INSERT INTO `users` (`id`, `email`, `fullname`, `create_at`)
     -> VALUES (3, "user3@gmail.com", "User3", NOW());
     Query OK, 1 row affected (0.198 sec)
-    ``
-    ``
+    </pre>
+    <pre>
     MariaDB [php_online_module3]> SELECT * FROM `users`;
     +------+-------------------------+------------+---------------------+---------------------+
     | id   | email                   | fullname   | create_at           | update_at           |
@@ -305,6 +305,6 @@ Cách 2: Sử dụng công cụ CSDL: xampp, wampp, Navicat, ...
     |    3 | user3@gmail.com         | User3      | 2023-01-11 14:25:55 | NULL                |
     +------+-------------------------+------------+---------------------+---------------------+
     3 rows in set (0.000 sec)
-    ``
+    </pre>
   - Sửa dữ liệu:
     ``
