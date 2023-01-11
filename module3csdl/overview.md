@@ -57,6 +57,51 @@ Cách 2: Sử dụng công cụ CSDL: xampp, wampp, Navicat, ...
 
 - Hiển thị databasse trên màn hình CMD:
   - `SHOW DATABASES;`
+  - Kết quả:
+    MariaDB [(none)]> SHow databases;
+    +--------------------+
+    | Database           |
+    +--------------------+
+    | data               |
+    | demo               |
+    | demo_crud_php      |
+    | demo_wp            |
+    | homestead          |
+    | information_schema |
+    | ismart             |
+    | ismart.com         |
+    | laravelpro         |
+    | mysql              |
+    | performance_schema |
+    | php49_project      |
+    | php_dienthoai1     |
+    | php_hocphp         |
+    | php_ltw1           |
+    | php_online         |
+    | php_online_module3 |
+    | php_shop_db        |
+    | php_shopping       |
+    | php_themsuaxoa     |
+    | php_vietpro_shop   |
+    | php_webdienthoai   |
+    | phplessons         |
+    | phpmyadmin         |
+    | qlsv               |
+    | sell_phones        |
+    | shop_db            |
+    | shopbanhang        |
+    | shopbanhang-1      |
+    | shopping_cart      |
+    | themewoo           |
+    | thuc_hanh_mysql    |
+    | training_php       |
+    | training_php8      |
+    | training_php9      |
+    | trainning          |
+    | unitop             |
+    | unitop_backup      |
+    +--------------------+
+    38 rows in set (0.002 sec)
 
 - Xóa cơ sở dữ liệu:
   - `DROP DATABASE databasename;`
@@ -77,6 +122,7 @@ Cách 2: Sử dụng công cụ CSDL: xampp, wampp, Navicat, ...
     - vd:    `DESCRIBE users;`: show ra cấu trúc bảng users
 
     - Kết quả:
+      <pre>
       MariaDB [php_online_module3]> DESCRIBE users;
       +-----------+--------------+------+-----+---------+-------+
       | Field     | Type         | Null | Key | Default | Extra |
@@ -86,6 +132,15 @@ Cách 2: Sử dụng công cụ CSDL: xampp, wampp, Navicat, ...
       | fullname  | varchar(50)  | YES  |     | NULL    |       |
       | create_at | datetime     | YES  |     | NULL    |       |
       +-----------+--------------+------+-----+---------+-------+
+      </pre>
 
 - Kiểu dữ liệu hay dùng trong SQL
-  - char(size): chuỗi có độ dài cố định, mặc định size là 1
+  - char(size): chuỗi có độ dài cố định, mặc định size là 1, size tù 0-255
+  - varchar(size): Chuỗi có độ dài biến đổi: Size là độ dài tối đa, từ 0-65535
+  - text: Chuỗi có độ dài tối đa là: 65,535 byle
+  - mediumtext: Chuỗi có độ dài tối đa là: 16,777,215 ký tự
+  - longtext: Chuỗi có độ dài tối đa là: 4,294,967,295 ký tự
+  - tinyint: Số nguyên có giá trị từ -128 đến 127
+  - smallint: Số nguyên có giá trị từ: -32768 đến 32767
+  - mediumint: Số nguyên có giá trị từ: -8388608 đến 8388607
+  
