@@ -1,3 +1,46 @@
+# Module 01: Nhập môn lập trình PHP
+
+## 1 Giới thiệu ngôn ngữ PHP
+
+```
+PHP LÀ GÌ?
+
+- PHP là một ngôn ngữ lập trình kịch bản phía server( hay còn gọi là back-end)
+dùng để phát triển các ứng dụng web.
+- PHP hoạt động trên nhiều hệ điều hành
+- PHP là một ngôn ngữ lập trình bậc cao
+- PHP tương thích với nhiều hệ quản trị CSDL MySQL, MongoDB, SQL Server.
+- PHP là mã nguồn mở đa nền tảng, hoàn toàn miễn phí
+- File PGP được lưu dứoi dạng *.php, các cú pháp PHP được đặt trong dấu
+<?php ?>
+- PHP có rất nhiều Framework, CMS miễn phí, cộng đồng phát triển lớn.
+
+```
+
+```
+BẢN CHẤT NGÔN NGỮ LẬP TRÌNH PHP
+
+Browser -(http request)-> Server
+Browser <-(http response)- Server
+
+-> Frontend(Browser) và Backend(Server) giao tiếp với nhau
+thông qua phương thức http
+```
+
+```
+BẢN CHẤT NGÔN NGỮ LẬP TRÌNH PHP
+
+WEBSITE
+-> Front Page(giao diện phía người dùng)
+  - Xử lý truy vấn dữ liệu
+  - Frontend: HTML, CSS, JS(giao diện trang web hiển thị phía client)
+  - Thêm, Sửa, Xoá dữ liệu(trong CSDL)
+-> Back Page
+  - Thêm, sửa, xoá dữ liệu
+  - Xử lý truy vấn dữ liệu
+  - FrontendL HTML, CSS, JS(giao diện phần quản trị)
+```
+
 ### LỘ TRÌNH HỌC LẬP TRÌNH PHP & MYSQL
 
 - PHP cơ bản -> Lập trình hướng đối tượng OOP vs PHP
@@ -162,17 +205,19 @@
     }
 
 # 23 Xử lý chuỗi trong PHP
+
 - Chuỗi là j?
   - Chuỗi là danh sách các ký tự nằm trong dấu nháy đơn hoặc nháy kép
-/**
- * Nguyên tắc khi xử lý chuỗi
- * - Nếu chuỗi đặt trong dấu nháy kép("") thì các ký tự là dấu nháy kép "" bên trong chuỗi
- *    phải có ký tự escape (\) phía trước
- *  - vd: echo "Trung tâm đào tạp \"Unitop\" - Đào tạo lập trình PHP";
- * - Nếu chuỗi đặt trong cặp nháy kép mà có biến thì không cần nối chuỗi
- *  - vd: echo "sum = $sum";
- * -
- */
+    /\*\*
+
+* Nguyên tắc khi xử lý chuỗi
+* - Nếu chuỗi đặt trong dấu nháy kép("") thì các ký tự là dấu nháy kép "" bên trong chuỗi
+* phải có ký tự escape (\) phía trước
+* - vd: echo "Trung tâm đào tạp \"Unitop\" - Đào tạo lập trình PHP";
+* - Nếu chuỗi đặt trong cặp nháy kép mà có biến thì không cần nối chuỗi
+* - vd: echo "sum = $sum";
+* - \*/
+
 # 31 Mảng trong PHP
 
 - Mảng là kiểu dữ liệu đặc biệt, trong đó chứa nhiều giá trị
@@ -180,3 +225,7 @@
   - Thêm phần tử có key: `$tenBien[key] = value;`
   - Thêm phần tử không key: `$tenBien[] = value;`
   - Dùng thông qua hàm array_push: `array_push($tenBien, value1, value2);`
+
+```
+
+```
