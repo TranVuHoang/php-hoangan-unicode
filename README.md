@@ -111,35 +111,64 @@ Note: khi cài Xampp thì nó tự động cài PHP và MySQL rồi
 
 ## 4. Kiểm tra thông tin trong PHP
 
+```
 - nếu file .php mà chỉ có `<?php` thì hiểu là chỉ có code php
 - muốn chèn html phải thêm `?>`
 - `phpinfo();`
   - Hàm kiểm tra phiên bản PHP hiện tại
+  - và các hàm liên quan khác
+```
 
 ## 5. Biến, comment, Debug trong PHP
 
+```
+ĐẶT TÊN BIẾN TRONG PHP
+
 - Biến là nơi để lưu trữ, biến có thể thay đổi được giá trị
-- 1. Đặt tên biến PHP
-  - syntax: `$variableName`
-  - Note:
-    - Tên biến bắt đầu bằng chữ cái hoặc dấu gạch dưới(\_)
-    - PHP phân biệt chữ hoa chữ thường
-    - PHP k cần khai báo kiểu dữ liệu
-    - Nên đặt tên biến theo quy tắc camelCase(lạc đà) ex: `$listUsers`
-- 2. Gán biến, xuất dữ liệu trong PHP
-  - syntax:
-    - `$variable = value;`
-    - vd:
-      `$fullName = "Hoàng Trần";`
-      `$email = "tranvuhoangjr@gmail.com";`
-  - In dữ liệu:
-    - echo <tenBien/tenHam/chuoi/so>;
-    - vd:
-      `echo $fullName";`
-      `echo "Hello World";`
-      `echo 10;`
-  - Note:
-    `Biến sẽ nhận giá trị gán sau cùng`
+- Cú pháp: $tenBien;
+- Ví dụ: $customerName;
+
+- Đặt tên biến PHP
+  -> Tên biến bắt đầu bằng chữ cái hoặc dấu gạch dưới(\_)
+  -> PHP phân biệt chữ hoa chữ thường
+  -> PHP k cần khai báo kiểu dữ liệu
+  -> Nên đặt tên biến theo quy tắc camelCase(lạc đà) ex: `$listUsers`
+```
+
+```
+GÁN BIẾN - XUẤT DỮ LIỆU TRONG PHP
+
+- Cú pháp: $variable = value;
+- Ví dụ: $fullName = "Hoàng Trần"; $email = "tranvuhoangjr@gmail.com";
+- In dữ liệu:
+  - echo <tenBien/tenHam/chuoi/so>;
+  - Ví dụ: echo $customerName; echo "Unicode";
+```
+
+```
+Biến sẽ nhận giá trị gán sau cùng
+Theo chuẩn PSR
+
+Chuẩn coding phổ biến của PHP community (PSR-1, PSR-12) thường:
+
+biến → camelCase
+method → camelCase
+class → PascalCase
+constant → UPPER_CASE
+```
+
+```
+COMMENT VÀ DEBUG DỮ LIỆU
+
+- Comment (Ghi chú):
+  -> 1 dòng: // Code ở đây
+  -> 1 dòng: # Code ở đây
+  -> Nhiều dòng: /** Code ở đây*/
+
+- Debug dữ liệu:
+  - var_dump($var): Trả về kiểu dữ liệu và giá trị
+  - print_r($var): Thường dùng để in mảng và đối tượng.
+```
 
 ## 6. Nối biến trong PHP
 
