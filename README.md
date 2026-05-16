@@ -41,29 +41,44 @@ WEBSITE
   - FrontendL HTML, CSS, JS(giao diện phần quản trị)
 ```
 
-### LỘ TRÌNH HỌC LẬP TRÌNH PHP & MYSQL
+## 2. LỘ TRÌNH HỌC LẬP TRÌNH PHP & MYSQL
 
-- PHP cơ bản -> Lập trình hướng đối tượng OOP vs PHP
-  -> thiết kế CSDL -> Xấy dựng các chức năng nhỏ(CRUD, login, logout,...) dùng PHP + Mysql
+```
+  -> PHP cơ bản
+  -> Lập trình hướng đối tượng OOP vs PHP
+  -> Thiết kế CSDL
+  -> Xấy dựng các chức năng nhỏ(CRUD, login, logout,...) dùng PHP + Mysql
   -> Rewrite URL()
-  => Thực hành và xây dựng 1 website hoàn chỉnh sử dụng PHP & Mysql(sản phầm demo)
+  -> Thực hành và xây dựng 1 website hoàn chỉnh sử dụng PHP & Mysql(sản phầm demo)
   -> học về các mô hình trong lập trình với CSDL: MVC, HMVC(cần học rất kỹ phần này)
   -> PHP Framework(Laravel)
-  -> CMS
-  -> công cụ quản lý mã nguồn: GIT, SVN
-  -> Công cụ quản lý Trello
-  -> Tên miền, hosting, Server/VPS(ubuntu,Centos)
+  -> PHP CMS(Nâng cao hơn của Framework):
+    -> ví du:
+    - web tin tức, giới thiệu: Wordpress
+    - woocomer: Magento
+    - ...
+  -> Công cụ quản lý mã nguồn: GIT, SVN
+  -> Công cụ quản lý công việc, task làm việc Trello
+  -> Tên miền, hosting, Server/VPS(ubuntu,Centos) - Deploy website
+  -> Bảo mật: Các hình thức tấn công và cách phòng tránh.
+```
 
-# Kiến thức nền tảng là quan trọng
+```
+KIẾN THỨC NỀN TẢNG LÀ QUAN TRỌNG
 
-- PHP (lội trình từ cơ bản - nên tảng -> nâng cao)
-  -1. webstie: giới thiệu, bán hàng, TMĐT
-  -2. PHP framework: Laravel, Codeigniter, Yii,...
-  -3. CMS: wordpress, magento,
-  -4.web app: CRM, ERP, Quản lý bán hàng, quản lý đơn hàng
-  -5. Tool: auto post social, auto view, email marketing
-- Kiến thức lý thyết -> thực hành -> lý thuyết -> thực hành => sản phẩm
-  -> chịu khó gõ code
+PHP (lộ trình từ cơ bản - nên tảng -> nâng cao)
+  - 1. Webstie: giới thiệu, bán hàng, TMĐT
+  - 2. PHP Framework: Laravel, Codeigniter, Yii,...
+  - 3. CMS: wordpress, magento,
+  - 4. Web app: CRM, ERP, Quản lý bán hàng, quản lý đơn hàng
+  - 5. Tool: auto post social, auto view, email marketing
+```
+
+```
+-> Kiến thức lý thyết(gõ theo) -> thực hành(tự thực hành với vd của riêng mình)
+-> lý thuyết -> thực hành => sản phẩm
+-> chịu khó gõ code
+```
 
 ## 3. Cài đặt môi trường, công cụ lập trình PHP
 
@@ -225,7 +240,3 @@ WEBSITE
   - Thêm phần tử có key: `$tenBien[key] = value;`
   - Thêm phần tử không key: `$tenBien[] = value;`
   - Dùng thông qua hàm array_push: `array_push($tenBien, value1, value2);`
-
-```
-
-```
