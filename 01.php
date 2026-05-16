@@ -1,6 +1,6 @@
 <table border="2" cellspacing="0" cellpadding="5">
-    <tr>
-        <?php
+  <tr>
+    <?php
         for ($i = 2; $i <= 98; $i += 2) {
             if ($i % 3 == 0 && $i % 5 == 0) {
                 echo "<td>FOOBAZ</td>";
@@ -16,12 +16,12 @@
             }
         }
         ?>
-    </tr>
+  </tr>
 </table>
 
 <style>
-    table {
-        /* bdcl + tab */
-        border-collapse: collapse;
-    }
+table {
+  /* bdcl + tab */
+  border-collapse: collapse;
+}
 </style>
