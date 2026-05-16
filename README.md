@@ -82,18 +82,32 @@ PHP (lộ trình từ cơ bản - nên tảng -> nâng cao)
 
 ## 3. Cài đặt môi trường, công cụ lập trình PHP
 
+```
+CÀI ĐẶT MÔI TRƯỜNG
+
+- Cài đặt Server ảo: XAMPP, AMPPS, Wamp,...
+- Cài đặt công cụ soạn thảo: VSCode, PHP Storm, Sublime Text, Netbean,...
+```
+
+```
 1. Cài đặt công cụ code PHP
-   - vs.code
-   - sublime text
-   - php storme
+- VSCode (Visual Studio Code)
+- Sublime text
+- PHP storm
+
 2. Cài đặt môi trường chạy PHP
-   - xampp
-   - wamps
-   - ampps
-     -> bản đóng gói
-     -> webserver(apche, Nginx, IIS)
-   - cài đặt PHP: `https://www.php.net/downloads.php`
-   - cài đặt Mysql: `https://www.mysql.com/downloads/`
+- Xampp
+- Wamps
+- Ampps
+
+Webserver(apche, Nginx, IIS)
+- cài đặt PHP: `https://www.php.net/downloads.php`
+- cài đặt Mysql: `https://www.mysql.com/downloads/`
+
+Note: khi cài Xampp thì nó tự động cài PHP và MySQL rồi
+-> chỉ cần chạy webserver (apache) Xampp lên là được
+(XAMPP Apache + MariaDB + PHP + Perl) có sẵn trong XAMPP ✅
+```
 
 ## 4. Kiểm tra thông tin trong PHP
 
